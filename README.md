@@ -23,6 +23,8 @@ Open the relevant directory, inspect its `package.json` and install its dependen
 
 Where environment templates are included, copy `.env.example` to `.env` in the same directory and supply your own local configuration. Do not reuse credentials from old commits. Some exercises depend on external services and older dependencies.
 
+GitHub OAuth examples require a personal OAuth application. Set `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` in the process environment before running the example. OAuth is not configured when these values are missing. The provided templates use disposable local settings; adjust them to the exercise's configuration.
+
 This is an educational archive. The examples are preserved as learning material and have not been tested as a complete suite.
 
 [BlackCoffeeIA](https://github.com/BlackCoffeeIA)
