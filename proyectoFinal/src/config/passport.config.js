@@ -17,10 +17,10 @@ const initializeStrategies = () =>{
         return done(null,user)//si no salio ningun error mostrara el "user"
     }))
 
-    passport.use('github',new GithubStrategy({
-        clientID:"Iv1.3eea8b6e4cc42772",
-        clientSecret:"470e8ef808e77282f6f7f2b72e144f76332f5ee0",
-        calllbackURL:"http://localhost:8080/api/sessions/githubcallback"
+    if (process.env.GITHUB_CLIENT_ID && process.env.GITHUB_CLIENT_SECRET) passport.use('github',new GithubStrategy({
+        clientID:process.env.GITHUB_CLIENT_ID,
+        clientSecret:process.env.GITHUB_CLIENT_SECRET,
+        callbackURL:"http://localhost:8080/api/sessions/githubcallback"
     },async(accessToken,refreshToken,profile,done) =>{
         try{
             console.log(profile);
